@@ -1,8 +1,8 @@
 class Smctl < Formula
   desc "Control your Mac's SMC: fan curves, battery charge limits, power telemetry"
   homepage "https://github.com/leaperone/smctl"
-  url "https://github.com/leaperone/smctl/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "26d01a01c9f4fea9da2ff9879404f23f246914714630ecbd1074cf2083a38e3d"
+  url "https://github.com/leaperone/smctl/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "d31e934bb86ce4b73a01ab582cd52b8424c7ce489ef3756b93ef8095c41c0e5e"
   license "MIT"
   head "https://github.com/leaperone/smctl.git", branch: "main"
 
