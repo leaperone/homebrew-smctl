@@ -1,8 +1,8 @@
 class Smctl < Formula
   desc "Control your Mac's SMC: fan curves, battery charge limits, power telemetry"
   homepage "https://github.com/leaperone/smctl"
-  url "https://github.com/leaperone/smctl/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "235c5bc4eb32e7e9a6d395bc7812be5cabd00b2f89505f1dfb69157b80b5d2e6"
+  url "https://github.com/leaperone/smctl/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "99372a3b9e1e90e21d68e8503e9f1650374bbb3f4cdf9b6c7c99ca160db458fd"
   license "MIT"
   head "https://github.com/leaperone/smctl.git", branch: "main"
 
@@ -14,6 +14,14 @@ class Smctl < Formula
     bin.install ".build/release/smctl"
     # smctl daemon install locates smctld next to the smctl binary.
     bin.install ".build/release/smctld"
+
+    man1.install "docs/smctl.1"
+
+    generate_completions_from_executable(
+      bin/"smctl", "--generate-completion-script",
+      shells: [:bash, :zsh, :fish],
+      shell_parameter_format: :none
+    )
   end
 
   def caveats
