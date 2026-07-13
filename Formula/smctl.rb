@@ -7,7 +7,7 @@ class Smctl < Formula
   head "https://github.com/leaperone/smctl.git", branch: "main"
 
   depends_on :macos
-  depends_on xcode: ["16.0", :build]
+  uses_from_macos "swift" => :build
 
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
